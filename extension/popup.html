@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Autofiller</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Resume Autofiller</h1>
+      <div id="status-indicator" class="status-dot"></div>
+    </header>
+
+    <section id="api-section" class="section">
+      <h2>API Configuration</h2>
+      <div class="input-group">
+        <label for="api-url">Backend URL:</label>
+        <input type="text" id="api-url" value="http://localhost:5000" placeholder="http://localhost:5000">
+        <button id="test-connection" class="btn btn-secondary">Test</button>
+      </div>
+      <div id="connection-status" class="status-message"></div>
+    </section>
+
+    <section id="upload-section" class="section">
+      <h2>Upload Resume</h2>
+      <div class="upload-area" id="upload-area">
+        <input type="file" id="resume-file" accept=".pdf,.docx,.txt" hidden>
+        <p>Drag & drop your resume here</p>
+        <p class="small">or click to browse (PDF, DOCX, TXT)</p>
+      </div>
+      <div id="upload-status" class="status-message"></div>
+      <div id="resume-preview" class="preview hidden"></div>
+    </section>
+
+    <section id="controls-section" class="section">
+      <h2>Autofill Controls</h2>
+      <div class="controls">
+        <button id="start-autofill" class="btn btn-primary" disabled>
+          Start Autofill
+        </button>
+        <button id="stop-autofill" class="btn btn-danger hidden">
+          Stop
+        </button>
+      </div>
+      <div class="options">
+        <label class="checkbox-label">
+          <input type="checkbox" id="confirm-each" checked>
+          Confirm before filling each field
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="auto-scroll" checked>
+          Auto-scroll to fields
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="click-add-buttons" checked>
+          Auto-click "Add" buttons
+        </label>
+      </div>
+    </section>
+
+    <section id="manual-input-section" class="section hidden">
+      <h2>Manual Input Required</h2>
+      <div id="manual-prompt" class="manual-prompt">
+        <p id="manual-field-label"></p>
+        <input type="text" id="manual-value" placeholder="Enter value...">
+        <div class="manual-buttons">
+          <button id="submit-manual" class="btn btn-primary">Submit</button>
+          <button id="skip-manual" class="btn btn-secondary">Skip</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="progress-section" class="section hidden">
+      <h2>Progress</h2>
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <p id="progress-text">0 / 0 fields filled</p>
+      <div id="activity-log" class="activity-log"></div>
+    </section>
+
+    <footer>
+      <p class="small">Powered by Groq AI + RAG</p>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

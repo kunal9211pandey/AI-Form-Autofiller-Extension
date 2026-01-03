@@ -1,0 +1,140 @@
+.autofill-highlight {
+  outline: 3px solid #4fc3f7 !important;
+  outline-offset: 2px !important;
+  transition: outline 0.2s ease;
+}
+
+.autofill-success {
+  outline: 3px solid #4caf50 !important;
+  outline-offset: 2px !important;
+}
+
+.autofill-error {
+  outline: 3px solid #f44336 !important;
+  outline-offset: 2px !important;
+}
+
+.autofill-pending {
+  outline: 3px solid #ff9800 !important;
+  outline-offset: 2px !important;
+}
+
+.autofill-overlay {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: #e0e0e0;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 999999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  min-width: 280px;
+  max-width: 350px;
+}
+
+.autofill-overlay-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.autofill-overlay-title {
+  color: #4fc3f7;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.autofill-overlay-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.autofill-overlay-close:hover {
+  color: #fff;
+}
+
+.autofill-overlay-content {
+  margin-bottom: 12px;
+}
+
+.autofill-overlay-field {
+  color: #81d4fa;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.autofill-overlay-value {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  border-radius: 6px;
+  word-break: break-word;
+}
+
+.autofill-overlay-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.autofill-overlay-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.autofill-overlay-btn-primary {
+  background: #4fc3f7;
+  color: #1a1a2e;
+}
+
+.autofill-overlay-btn-primary:hover {
+  background: #29b6f6;
+}
+
+.autofill-overlay-btn-secondary {
+  background: #444;
+  color: #fff;
+}
+
+.autofill-overlay-btn-secondary:hover {
+  background: #555;
+}
+
+.autofill-tooltip {
+  position: absolute;
+  background: #1a1a2e;
+  color: #4fc3f7;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 999998;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+}
+
+.autofill-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0;
+  border-style: solid;
+  border-color: #1a1a2e transparent transparent;
+}
